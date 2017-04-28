@@ -11,24 +11,24 @@ get('/') do
 end
 
 get('/:id') do
-   word = Word.find(params.fetch('id').to_i())
-   @word = word
+   @word = Word.find(params.fetch('id').to_i())
+
    erb(:word)
 end
 
 get('/:id/definition/new') do
-  word = Word.find(params.fetch('id').to_i())
-  @word = word
+  @word = Word.find(params.fetch('id').to_i())
   erb(:add_definition_form)
 end
 
-post('/definition/new') do
-
+post('/definitions') do
   definition = params.fetch('definition')
   attributes = {:definition => definition}
   new_definition = Definition.new(attributes)
-
-  erb(:index)
+  new_definition.save()
+  @word = Word.find(params.fetch('id').to_i())
+  @word.add_definition(new_definition())
+  erb(:success)
 end
 
 
