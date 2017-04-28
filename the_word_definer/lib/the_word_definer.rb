@@ -13,17 +13,17 @@ class Word
   end
 
   define_method(:save) do
-    @@all_words.push(@word)
+    @@all_words.push(self)
   end
 
   define_method(:add_definition) do |definition|
     @definitions.push(definition)
   end
 
-  define_singleton_method(:find) do |id|
+  define_singleton_method(:find) do |identification|
     found_word = nil
     @@all_words.each() do |word|
-      if word.id == id
+      if word.id == identification
         found_word = word
       end
     end

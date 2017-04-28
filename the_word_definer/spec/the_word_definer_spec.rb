@@ -28,7 +28,7 @@ describe(Word) do
     it('saves the newly created word to the all words array') do
       test_word = Word.new({:word => "monkey"})
       test_word.save()
-      expect(Word.all()).to(eq(["monkey"]))
+      expect(Word.all()).to(eq([test_word]))
     end
   end
 

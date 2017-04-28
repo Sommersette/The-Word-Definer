@@ -1,0 +1,9 @@
+<form action="/<%= @word.id()%>definition/new" method="post">
+  <div class="form-group">
+    <input type="hidden" name="word_id" value="<%= @word.id() %>">
+    <label for="definition">Please Enter A New Definition</label>
+    <textarea  rows="5" cols="80" id ="definition" type="text" name="definition"></textarea>
+  </div>
+  <button type="submit">Submit!</button>
+</form>
+<br>
