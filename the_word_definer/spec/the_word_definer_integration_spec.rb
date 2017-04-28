@@ -60,7 +60,7 @@ describe("the click on the new word path", {:type => :feature}) do
     click_on("monkey")
     click_on("Add A New Definition")
     visit("1/definition/new")
-    fill_in("Please Enter A New Definition", :with => "a giant rabbit")
+    fill_in('definition', with: "a giant rabbit")
     click_button("Submit")
     expect(page).to have_content("Your Definition Has Been Added!")
   end
