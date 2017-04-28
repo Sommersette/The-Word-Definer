@@ -1,13 +1,13 @@
-# <!--PROJECT NAME HERE-->
+# The Word Definer
 
-<!--PROJECT DESCRIPTION HERE-->
+# This is a simple program that allows a user to input a word and then multiple definitions for that word. The program displays all the words for the users and allows the user to click on a specific word to see it's definition.
 
 ### Prerequisites
 
-Web browser with ES6 compatibility
+Web browser
 Examples: Chrome, Safari
 
-Ruby <!--VERSION HERE-->
+Ruby 2.2.2
 Bundler
 
 ### Installing
@@ -21,19 +21,21 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 * HTML
 * CSS
 * Bootstrap https://getbootstrap.com/
-* ES6
 * Jquery https://jquery.com/
 
 ## Specifications
 
 | behavior |  input   |  output  |
-|----------|:--------:|:--------:|
-<!--SPECS GO HERE-->
- 
+|The program allows the user to input a word or multiple words |*input* "monkey"|*display* "monkey" definition: "animal"|
+|The program allows the user to input multiple definitions for the word|*input* "animal"| *display* "monkey" definition: "animal"|
+|The program displays all the words to the user and makes them clickable |*display* "monkey"|*upon click* *display* definition: "animal"|
+
+
+
 ## Authors
 
-* <!--YOUR NAME HERE-->
+* Jason Ainsworth
 
-## License
+## License MIT
 
-Copyright © 2017 <!--YOUR NAME HERE-->
+Copyright © 2017 Jason Ainsworth

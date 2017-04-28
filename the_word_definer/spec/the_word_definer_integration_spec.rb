@@ -6,6 +6,9 @@ set(:show_exceptions, false)
 
 
 describe("the index page path", {:type => :feature}) do
+  before do
+    Word.clear()
+  end
   it("lets the user visit the form to enter a new word") do
     visit("/")
     click_on("Add A New Word")
@@ -14,6 +17,9 @@ describe("the index page path", {:type => :feature}) do
 end
 
 describe("the enter new word path", {:type => :feature}) do
+  before do
+    Word.clear()
+  end
   it("allows the user to enter a new word") do
     visit("/word/new")
     fill_in("Please Enter A New Word", :with => "monkey")
