@@ -25,7 +25,8 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 
 ## Specifications
 
-| behavior |  input   |  output  |
+| Behavior |  Input   |  Output  |
+|----------|:--------:|:--------:|
 |The program allows the user to input a word or multiple words |*input* "monkey"|*display* "monkey" definition: "animal"|
 |The program allows the user to input multiple definitions for the word|*input* "animal"| *display* "monkey" definition: "animal"|
 |The program displays all the words to the user and makes them clickable |*display* "monkey"|*upon click* *display* definition: "animal"|
