@@ -14,7 +14,7 @@ describe("the index page path", {:type => :feature}) do
 end
 
 describe("the enter new word path", {:type => :feature}) do
-  it("allow the user to enter a new word") do
+  it("allows the user to enter a new word") do
     visit("/word/new")
     fill_in("Please Enter A New Word", :with => "monkey")
     click_button("Submit")
@@ -22,12 +22,46 @@ describe("the enter new word path", {:type => :feature}) do
   end
 end
 
-# describe("the index page path", {:type => :feature}) do
-#   it("processes the user input and returns correct message if its a palindrome") do
-#     visit("/")
-#     fill_in("phrase1", :with => "madam")
-#     fill_in("phrase2", :with => "anagram")
-#     click_button("what am i?")
-#     expect(page).to have_content("'madam' is a palindrome")
-#   end
-# end
+describe("the click on the new word path", {:type => :feature}) do
+  before do
+    Word.clear()
+  end
+  it("allows the user to click on the newly created word") do
+    visit("/word/new")
+    fill_in("Please Enter A New Word", :with => "monkey")
+    click_button("Submit")
+    click_on("monkey")
+    expect(page).to have_content("Add A New Definition")
+  end
+end
+
+describe("the click on the new word path", {:type => :feature}) do
+  before do
+    Word.clear()
+  end
+  it("allows the user to click on the newly created word") do
+    visit("/word/new")
+    fill_in("Please Enter A New Word", :with => "monkey")
+    click_button("Submit")
+    click_on("monkey")
+    click_on("Add A New Definition")
+    expect(page).to have_content("Please Enter A New Definition")
+  end
+end
+
+describe("the click on the new word path", {:type => :feature}) do
+  before do
+    Word.clear()
+  end
+  it("allows the user to click on the newly created word") do
+    visit("/word/new")
+    fill_in("Please Enter A New Word", :with => "monkey")
+    click_button("Submit")
+    click_on("monkey")
+    click_on("Add A New Definition")
+    visit("1/definition/new")
+    fill_in("Please Enter A New Definition", :with => "a giant rabbit")
+    click_button("Submit")
+    expect(page).to have_content("Your Definition Has Been Added!")
+  end
+end
