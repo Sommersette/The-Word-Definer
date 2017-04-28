@@ -4,6 +4,9 @@ require "pry"
 
 
 describe(Word) do
+  before do
+    Word.clear()
+  end
   describe('#word') do
     it('returns the newly created word') do
     test_word = Word.new({:word => "monkey"})
@@ -50,6 +53,16 @@ describe(Word) do
       expect(Word.find(test_word.id())).to(eq(test_word))
     end
   end
+
+  describe('.clear') do
+    it('clears out the all_words array') do
+      test_word = Word.new({:word => "monkey"})
+      test_word.save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
 end
 
 
